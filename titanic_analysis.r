@@ -3,18 +3,9 @@ library (caret)
 library(ggplot2)
 library(corrplot)
 library(e1071)
-library(doBy)
-library(mice)
-
-
 #load data
 train <- read.csv("D:/Data_Science/Data/titanic/train.csv" , header = TRUE)
 test <- read.csv("D:/Data_Science/Data/titanic/test.csv", header = TRUE)
-
-train$Fare[train$Fare == 0] <- NA
-train[c(62, 830), 'Embarked'] <- NA
-data.frame('missing_values' = sapply(train, function(x) sum(is.na(x))))
-
 
 #quick summary of the data
 dim(train)
@@ -66,11 +57,11 @@ data.frame('missing_values' = sapply(train, function(x) sum(is.na(x))))
 train <- train[,c(-1, -4, -9, -11, -12)]
 
 
-###Analysis
+
+##analyses
 # 10-fold cross validation with 3 repeats
 trainControl <- trainControl(method="repeatedcv", number=10, repeats=3)
 metric <- "Accuracy"
-
 
 ###compare several algorithms
 ##Linear Algorithms: 
