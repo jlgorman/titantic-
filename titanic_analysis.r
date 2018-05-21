@@ -14,3 +14,8 @@ head(train)
 sapply(train, class)
 
 summary(train)
+
+##wrangling
+#convert survived to factor
+train[,2] <- as.factor((train[,2]))
+
