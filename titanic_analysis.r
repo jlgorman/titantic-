@@ -23,6 +23,9 @@ train[,2] <- as.factor((train[,2]))
 #drop unneccesary variables in effort to increase performance
 train <- train[,c(-1, -4, -9, -11, -12)]
 
+
+
+##analyses
 # 10-fold cross validation with 3 repeats
 trainControl <- trainControl(method="repeatedcv", number=10, repeats=3)
 metric <- "Accuracy"
