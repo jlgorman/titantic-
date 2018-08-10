@@ -3,9 +3,10 @@ library (caret)
 library(ggplot2)
 library(corrplot)
 library(e1071)
+
 #load data
-train <- read.csv("D:/Data_Science/Data/titanic/train.csv" , header = TRUE)
-test <- read.csv("D:/Data_Science/Data/titanic/test.csv", header = TRUE)
+train <- read.csv("data/train.csv" , header = TRUE)
+test <- read.csv("data/test.csv", header = TRUE)
 
 #quick summary of the data
 dim(train)
